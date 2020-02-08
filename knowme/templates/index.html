@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WorldInsights</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <style>
+            .hero-image {
+              background-image: url("static/images/traits.png");
+              background-color: #cccccc;
+              height: 200px;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: relative;
+             
+            }
+            
+            .hero-text {
+              text-align: center;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: white;
+            }
+            </style>
+
+  </head>
+<body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <a class="navbar-brand" href="/">KnowME</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+        <div class="hero-image">
+            <div class="hero-text">
+              <h1 style="font-size:60px; color:rgb(39, 20, 207)"></h1>
+            </div>
+          </div>
+
+<div class="container-fluid">
+<br>
+  <!-- <div class="row">
+  <div class="control-row">
+      Country: <select class="countrydata" id="countrydata" onchange="optionChanged(this.value)">
+      </select>
+    </div>
+  </div> -->
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <div class="plot" id="plot"></div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="plot2" id="plot2"></div>
+        </div>
+  </div>
+<br>
+  <div class="row">
+      <div class="col-md-6">
+          <div class="plot_gdp_current_usd" id="plot_gdp_current_usd"></div>
+        </div>
+        
+
+        <div class="col-md-6">
+                <canvas id="plot_unemployment_usd" width="700" height="450" ></canvas>
+          </div>
+    </div>
+    </div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/d3.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/plotly-latest.min.js') }}"></script>
+</body>
+</html>
