@@ -9,12 +9,12 @@ import categorize
 from flask import Flask, jsonify, render_template
 
 def identifyPersonalityTraits(file_name):
-        clf_emotional_stability = load('knowme_EmotionalSt.joblib')
-        clf_knowme_MentalE_WlPower = load('knowme_MentalE_WlPower.joblib')
-        clf_knowme_Modesty = load('knowme_Modesty.joblib')
-        clf_lackOfDiscipline = load('lackOfDiscipline.joblib')
-        clf_PoorConcentration = load('PoorConcentration.joblib')
-        clf_SocialIsolation = load('SocialIsolation.joblib')
+        clf_emotional_stability = load('knowme/knowme_EmotionalSt.joblib')
+        clf_knowme_MentalE_WlPower = load('knowme/knowme_MentalE_WlPower.joblib')
+        clf_knowme_Modesty = load('knowme/knowme_Modesty.joblib')
+        clf_lackOfDiscipline = load('knowme/lackOfDiscipline.joblib')
+        clf_PoorConcentration = load('knowme/PoorConcentration.joblib')
+        clf_SocialIsolation = load('knowme/SocialIsolation.joblib')
 
         # file_name ="/Michael_HW.png"  
         raw_features = extract.start(file_name)        

@@ -5,10 +5,7 @@ import numpy as np
 import pandas as pd
 # from tensorflow.keras.models import load_model
 # from tensorflow.keras.preprocessing import image
-
 import Execute_Model as execute_model
-
-
 
 # Create an instance of our Flask app.
 app = Flask(__name__)
@@ -73,8 +70,11 @@ def getPersonalityTraits():
 
     print("FileName is : "+filename)
 
+    image_filename = "".join(["knowme/images/",file])
+    print("image filename to process: " +image_filename)
+
     # file = "Michael_HW.png"
-    personality_Trait_dict = execute_model.identifyPersonalityTraits(file)
+    personality_Trait_dict = execute_model.identifyPersonalityTraits(image_filename)
 
     print("Printin g value of personality_Trait_dict:")
     print(personality_Trait_dict)

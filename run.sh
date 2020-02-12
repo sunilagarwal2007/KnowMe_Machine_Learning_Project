@@ -1,0 +1,1 @@
+FLASK_APP=knowme/app.py flask run

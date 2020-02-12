@@ -732,7 +732,7 @@ def is_grey_scale(image):
 def calculatePenPressure(image):
 
     global PEN_PRESSURE
-
+    # print("calculatePenPressure for image : " +image)
     # Preprocessing step to convert to gray - Replace with function from Michael
     image = convToGS(image)
     #inverting the image pixel by pixel individually. 
@@ -786,9 +786,11 @@ def start(file_name):
     global WORD_SPACING
     global PEN_PRESSURE
     global SLANT_ANGLE
-
+    print("image path n name:" + file_name)
     # read image from disk
-    image = cv2.imread('images/'+file_name)
+    # image = cv2.imread('images/'+file_name)
+    image = cv2.imread(file_name)
+  
     #cv2.imshow(file_name,image)
     calculatePenPressure(image)
 
