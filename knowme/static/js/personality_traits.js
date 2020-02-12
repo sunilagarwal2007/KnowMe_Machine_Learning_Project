@@ -57,12 +57,12 @@
 					  '<table border=1 class="table table-striped"> \
 					  		<thead><tr> <th style="width:130px"> Personality Trait </th> <th style="width:130px"> Value </th> </tr> </thead> \
 							<tbody> \
-								<tr> <td> Emotional_Stability </td> <td>' + Emotional_Stability + '</td> </tr> \
-								<tr> <td> Mental_Power </td> <td>' + Mental_Power + ' </td> </tr>    \
+								<tr> <td> Emotional Stability </td> <td>' + Emotional_Stability + '</td> </tr> \
+								<tr> <td> Mental Power </td> <td>' + Mental_Power + ' </td> </tr>    \
 								<tr> <td> Modesty </td> <td>' + Modesty + ' </td> </tr>    \
 								<tr> <td> Discipline </td> <td>' + Discipline + ' </td> </tr>    \
 								<tr> <td> Concentration </td> <td>' + Concentration + ' </td> </tr>    \
-								<tr> <td> Social_Isolation </td> <td>' + Social_Isolation + ' </td> </tr>    \
+								<tr> <td> Social Isolation </td> <td>' + Social_Isolation + ' </td> </tr>    \
 							<tbody> \
 						</table>'
 					  

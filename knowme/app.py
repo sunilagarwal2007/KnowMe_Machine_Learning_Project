@@ -6,6 +6,9 @@ import pandas as pd
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
+import Execute_Model as execute_model
+
+
 
 # Create an instance of our Flask app.
 app = Flask(__name__)
@@ -60,15 +63,62 @@ def upload():
 # /api/getCountryNames?indicator_code=<indicator_code>
 @app.route('/api/getPersonalityTraits', methods=['GET'])
 def getPersonalityTraits():
+    
+#     target = os.path.join(APP_ROOT, 'images/')
+#     if not os.path.isdir(target):
+#         os.mkdir(target)
+#    for file in request.files.getlist("file"):
+#         filename = file.filename
+#         destination = "/".join([target, filename])
+#         file.save(destination)
+#         file = destination
+
+    file = "/images/Michael_HW.png"
+    personality_Trait_dict = execute_model.identifyPersonalityTraits(file)
+
+    #     model = load_model("mnist_trained.h5")
+    #     image_size = (28, 28)
+        
+    #     from tensorflow.keras.preprocessing import image
+    #     from tensorflow.keras.preprocessing.image import img_to_array
+
+    #     im = image.load_img(filepath, target_size=image_size, color_mode="grayscale")
+    #     image = img_to_array(im)
+    #     image /= 255
+    #     img = image.flatten().reshape(-1, 28*28)
+    #     img = 1 - img
+    #     model.predict_classes(img)
+
+    #     print(model.predict_classes(img))
+
+    #     pred = model.predict_classes(img)
+
+
+    personality_Trait_dict = {
+        "Emotional_Stability": "Not Stable",
+        "Mental_Power": "Low",
+        "Modesty": "Not Observed",
+        "Discipline": "Not Observed",
+        "Concentration": "Observed",
+        "Social_Isolation": "Observed"
+        }
+
+    return jsonify(personality_Trait_dict)
+
+
+
+# /api/getCountryNames?indicator_code=<indicator_code>
+@app.route('/api/getPersonalityTraits_Test', methods=['GET'])
+def getPersonalityTraits_Test():
     # link = request.form.get('Link')
 
     personality_Trait_dict = {
-        "Emotional_Stability": 1.0,
-        "Mental_Power": 1.0,
-        "Modesty": 0.0,
-        "Discipline": 0.5,
-        "Concentration": 0.5,
-        "Social_Isolation": 1.0
+        "Emotional_Stability": "Not Stable",
+        "Mental_Power": "Low",
+        "Modesty": "Not Observed",
+        "Discipline": "Not Observed",
+        "Concentration": "Observed",
+        "Social_Isolation": "Observed"
         }
 
     return jsonify(personality_Trait_dict)
