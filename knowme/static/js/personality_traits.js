@@ -26,8 +26,10 @@
 		  $("#image-form").on("submit", function() {
 			$("#msg").html('<div class="alert alert-info"><i class="fa fa-spin fa-spinner"></i> Please wait...!</div>');
 			$.ajax({
-			  type: "POST",
-			  url: "/api/upload",
+			//   type: "POST",
+			//   url: "/api/upload",
+			 type: "GET",
+			 url: "/api/getPersonalityTraits",
 			  data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
 			  contentType: false, // The content type used when sending data to the server.
 			  cache: false, // To unable request pages to be cached
@@ -41,10 +43,30 @@
 				} else {
 					console.log("Predictaed value is" + data)
 				  $("#msg").html(
-					'<div class="alert alert-info"><i class="fa fa-exclamation-triangle"></i> Extension not good only try with <strong>GIF, JPG, PNG, JPEG</strong>.</div>'
+					// '<div class="alert alert-info"><i class="fa fa-exclamation-triangle"></i> Extension not good only try with <strong>GIF, JPG, PNG, JPEG</strong>.</div>'
+					'<div class="alert alert-success">Personality Traits evaluated  successfully.</div>'
 				  );
+				  var Emotional_Stability = data["Emotional_Stability"]
+				  var Mental_Power = data["Mental_Power"]
+				  var Modesty = data["Modesty"]
+				  var Discipline = data["Discipline"]
+				  var Concentration = data["Concentration"]
+				  var Social_Isolation = data["Social_Isolation"]
 
-				  $("#result_traits").html(data);
+				  $("#result_traits").html(
+					  '<table border=1 class="table table-striped"> \
+					  		<thead><tr> <th style="width:130px"> Personality Trait </th> <th style="width:130px"> Value </th> </tr> </thead> \
+							<tbody> \
+								<tr> <td> Emotional_Stability </td> <td>' + Emotional_Stability + '</td> </tr> \
+								<tr> <td> Mental_Power </td> <td>' + Mental_Power + ' </td> </tr>    \
+								<tr> <td> Modesty </td> <td>' + Modesty + ' </td> </tr>    \
+								<tr> <td> Discipline </td> <td>' + Discipline + ' </td> </tr>    \
+								<tr> <td> Concentration </td> <td>' + Concentration + ' </td> </tr>    \
+								<tr> <td> Social_Isolation </td> <td>' + Social_Isolation + ' </td> </tr>    \
+							<tbody> \
+						</table>'
+					  
+					  );
 
 				}
 			  },

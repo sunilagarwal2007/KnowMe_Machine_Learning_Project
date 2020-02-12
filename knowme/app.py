@@ -58,11 +58,20 @@ def upload():
     # return render_template("index.html")
 
 # /api/getCountryNames?indicator_code=<indicator_code>
-@app.route('/api/getPersonalityTraits', methods=['POST'])
-def getPersonalityTraits(indicator_code=None):
-    link = request.form.get('Link')
+@app.route('/api/getPersonalityTraits', methods=['GET'])
+def getPersonalityTraits():
+    # link = request.form.get('Link')
 
-    return jsonify(link)
+    personality_Trait_dict = {
+        "Emotional_Stability": 1.0,
+        "Mental_Power": 1.0,
+        "Modesty": 0.0,
+        "Discipline": 0.5,
+        "Concentration": 0.5,
+        "Social_Isolation": 1.0
+        }
+
+    return jsonify(personality_Trait_dict)
 
 
     

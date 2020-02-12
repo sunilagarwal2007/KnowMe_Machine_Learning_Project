@@ -6,19 +6,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style.css">
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
 
   <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>  -->
 
- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+ <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
 
 
 
     <style>
-            .hero-image {
+            /* .hero-image {
               background-image: url("static/images/traits.png");
               background-color: #cccccc;
               height: 200px;
@@ -36,140 +42,175 @@
               left: 50%;
               transform: translate(-50%, -50%);
               color: white;
-            }
+            } */
 
 
 
             .btn-file {
-    position: relative;
-    overflow: hidden;
-}
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
+                position: relative;
+                overflow: hidden;
+            }
+            .btn-file input[type=file] {
+                position: absolute;
+                top: 0;
+                right: 0;
+                min-width: 100%;
+                min-height: 100%;
+                font-size: 100px;
+                text-align: right;
+                filter: alpha(opacity=0);
+                opacity: 0;
+                outline: none;
+                background: white;
+                cursor: inherit;
+                display: block;
+            }
 
-#img-upload{
-    width: 100%;
-}
+            #img-upload{
+                width: 100%;
+            }
 
-.file {
-  visibility: hidden;
-  position: absolute;
-}
+            .file {
+              visibility: hidden;
+              position: absolute;
+            }
 
+            .slogan {
+                position: relative;
+                line-height:1;
+                top: 0px; /* Changes the space between the logo and the slogan */
+                font-size: .9em; /* Changes the font size of the slogan */
+                font-style: italic; /* Changes the font style of the slogan */
+                color:#222222; /* Changes the color of the slogan */
+                letter-spacing:0px; /* Changes the letter spacing of the slogan */
+            }
 
+            .alert {
+              /* width:40%;   */
+              display:inline-block; 
+              margin-top: 9px;
+              height: 39px;
+              line-height:42px;
+              padding:0px 15px;
+            }
+            .jumbotron_image{
+              background-image:url('static/images/project_image.jpg');height: 200px;
+              background-position: center;
+
+            }
+
+            .jumbotron {
+                min-height:50px;
+                background-size:inherit;
+                padding: 0.1em 0.1em;
+                background-image: url("static/images/jumbotron_bg.jpg");
+                object-fit: contain;
+            }
             </style>
 
   </head>
 <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white">
           <a class="navbar-brand" href="/">KnowME</a>
+      </br>
+          <a class="slogan" id="slogan">Learn about yourself with Machine Learning</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-        </nav>
+        </nav> -->
         <!-- <div class="hero-image">
             <div class="hero-text">
               <h1 style="font-size:60px; color:rgb(39, 20, 207)"></h1>
             </div>
           </div> -->
 
+          <div class="row">
+              <div class="col-md-4 jumbotron_image" >
+              </div>
+              <div class="col-md-8 jumbotron text-center" style="background-color:royalblue;height: 200px;background-position:center">
+                <h1 style="color: snow">KnowME</h1>
+                <h5 style="color: snow">Learn about yourself with Machine Learning</h5>
+              </div>
+          </div>
+
 <div class="container-fluid">
 <br>
-<div class="row">
-  <div class="col-md-3">
+  <div class="row">
+    <div class="col-md-4"> 
+        <!-- <div class="row"> -->
+            <div class="form-group">
+                <form method="post" id="image-form" enctype="multipart/form-data" onSubmit="return false;">
+                      <input type="file" name="file" class="file">
+                      <div class="input-group my-2">
+                          <input type="text" class="form-control" access="image/*" disabled placeholder="Upload File" id="file"/>
+                          <button type="button" class="browse btn btn-primary">Browse...</button>
+                        &nbsp;&nbsp; <input type="submit" name="submit" value="Process" class="btn btn-primary">
+                      </div>
+                  </form>
+              </div>
+            <!-- </div> -->
 
-</div>
-
-<div class="col-md-6">
-    <div class="form-group">
-
-    <div class="ml-2 col-sm-4">
-            <div id="msg"></div>
-            <form method="post" id="image-form" enctype="multipart/form-data" onSubmit="return false;">
-                <div class="form-group">
-                    <input type="file" name="file" class="file">
-                    <div class="input-group my-3">
-                        <input type="text" class="form-control" access="image/*" disabled placeholder="Upload File" id="file">
-                        <div class="input-group-append">
-                            <button type="button" class="browse btn btn-primary">Browse...</button>
-                        </div>
-                    </div>
-                    <div class="form-group my-3">
-                      <input type="submit" name="submit" value="Process" class="btn btn-primary">
-                    </div>
-                     
-                </div>
-                </div>
-                
-                
-            </form>
-        </div>
-
-        <!-- <label>Upload Image</label>
-        <div class="input-group">
-            <span class="input-group-btn">
-                <span class="btn btn-default btn-file">
-                    Browse… <input type="file" id="imgInp">
-                </span>
-            </span>
-            <input type="text" class="form-control" readonly>
-        </div>
-         -->
     </div>
-</div>
-<div class="col-md-3">
+    <div class="col-md-8">
+        <div id="msg"></div>
 
-</div>
-
-</div>
-
-
-  <!-- <div class="row">
-  <div class="control-row">
-      Country: <select class="countrydata" id="countrydata" onchange="optionChanged(this.value)">
-      </select>
+        
+          <!-- <div class="row">
+              <div id="msg"></div>
+          </div> -->
     </div>
-  </div> -->
-<br>
+  <!-- </div> -->
+</div>
+
+<!-- <br> -->
 <div class="row">
-    <div class="col-md-6">
-        <!-- <div class="plot" id="plot"></div> -->
-        <!-- <img id='img-upload'/> -->
-        <!-- <div class="form-group"> -->
-                    <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
-               
+    <div class="col-md-4">
 
-      </div>
+        <div class="card">
+            <div class="card-header">
+                View Uploaded Handwriting
+            </div>
+            <div class="card-body">
+                <img src="static/images/upload_image.png" id="preview" class="img-thumbnail" height="400" width="400">
+            </div>
+          </div>
 
-      <div class="col-md-6">
-          <div class="result" id="result">Results</div>
-          <div class="result_traits" id="result_traits"></div>
-        </div>
+        <!-- <div class="panel panel-primary">
+            <div class="panel-heading">View Uploaded Handwriting</div>
+            <div class="panel-body"><img src="static/images/upload_image.png" id="preview" class="img-thumbnail" height="400" width="400"> </div>
+            
+            
+          </div> -->
+
+        <!-- <img src="https://placehold.it/400x400" id="preview" class="img-thumbnail">        -->
+          
+    </div>
+    <div class="col-md-8">
+
+        <div class="card">
+            <div class="card-header">
+                Pesonality Traits Results
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5> -->
+              <p class="card-text" id="result_traits"></p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+          </div>
+
+        
+        <!-- <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Pesonality Traits Results</h3>
+            </div>
+            <div id="sample-metadata" class="panel-body"></div> 
+            <div class="panel-body" id="result_traits"></div>
+          </div> -->
+      <!-- <div class="result" id="result">Results</div> -->
+    </div>
   </div>
 <br>
-  <div class="row">
-      <div class="col-md-6">
-          <div class="plot_gdp_current_usd" id="plot_gdp_current_usd"></div>
-        </div>
-        
-
-        <div class="col-md-6">
-                <canvas id="plot_unemployment_usd" width="700" height="450" ></canvas>
-          </div>
-    </div>
+  
     </div>
   </div>
 </div>
@@ -182,6 +223,6 @@
 
 <!-- <script src="{{ url_for('static', filename='js/d3.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/plotly-latest.min.js') }}"></script> -->
-<script src="{{ url_for('static', filename='js/image_upload.js') }}"></script>
+<script src="{{ url_for('static', filename='js/personality_traits.js') }}"></script>
 </body>
 </html>
