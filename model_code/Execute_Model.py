@@ -16,8 +16,7 @@ clf_PoorConcentration = load('PoorConcentration.joblib')
 clf_SocialIsolation = load('SocialIsolation.joblib')
 
 file_name ="/Michael_HW.png"  
-        raw_features = extract.start(file_name)
-        
+        raw_features = extract.start(file_name)        
         raw_baseline_angle = raw_features[0]
         baseline_angle, comment = categorize.determine_baseline_angle(raw_baseline_angle)
         print ("Baseline Angle: "+comment)
@@ -49,16 +48,42 @@ file_name ="/Michael_HW.png"
         emotional_stability= clf_emotional_stability.predict([[baseline_angle, slant_angle]])
         MentalE_WlPower = clf_knowme_MentalE_WlPower.predict([[letter_size, pen_pressure]])
         Modesty = clf_knowme_Modesty.predict([[letter_size, top_margin]])
-        lackOfDiscipline= clf_lackOfDiscipline.predict([[slant_angle, top_margin]])
-        PoorConcentration= clf_PoorConcentration.predict([[letter_size, line_spacing]])
+        Discipline= clf_lackOfDiscipline.predict([[slant_angle, top_margin]])
+        Concentration= clf_PoorConcentration.predict([[letter_size, line_spacing]])
         SocialIsolation= clf_SocialIsolation.predict([[line_spacing, word_spacing]])
 
+        if(emotional_stability[0]==1):
+            emotional_stability = "Stable"
+        else:
+            emotional_stability = "Not Stable"
+        if(MentalE_WlPower[0]==1):
+            MentalE_WlPower = "High or Average"
+        else:
+            MentalE_WlPower = "Low"
+        if(Modesty[0]==1):
+            modesty= "Observed"
+        else:
+            modesty= "Not Observed"
+        if(Concentration[0]==1):
+            concentration= "Observed"
+        else:
+            concentration= "Not Observed"
+        if(Discipline[0]==1):
+            discipline= "Observed"
+        else:
+            discipline= "Not Observed"
+        if(SocialIsolation[0]==1):
+            SocialIsolation= "Observed"
+        else:
+            SocialIsolation= "Not Observed"
+        
         personality_Trait_dict = {
-        "Emotional_Stability: ": emotional_stability[0],
-        "Mental_Power": MentalE_WlPower[0],
-        "Modesty": Modesty[0],
-        "Discipline": lackOfDiscipline[0],
-        "Concentration": PoorConcentration[0],
-        "Social_Isolation": SocialIsolation[0]
+        "Emotional_Stability: ": emotional_stability ,
+        "Mental_Power": MentalE_WlPower,
+        "Modesty": modesty,
+        "Discipline": discipline,
+        "Concentration": concentration,
+        "Social_Isolation": SocialIsolation
         }
+
         print(personality_Trait_dict)
