@@ -3,8 +3,8 @@ import os
 from flask import Flask, render_template,  jsonify, request
 import numpy as np
 import pandas as pd
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
+# from tensorflow.keras.models import load_model
+# from tensorflow.keras.preprocessing import image
 
 import Execute_Model as execute_model
 
@@ -41,10 +41,9 @@ def upload():
         filepath = destination
         model = load_model("mnist_trained.h5")
         image_size = (28, 28)
-        
-        from tensorflow.keras.preprocessing import image
-        from tensorflow.keras.preprocessing.image import img_to_array
-
+       
+        # from tensorflow.keras.preprocessing import image
+        # from tensorflow.keras.preprocessing.image import img_to_array
         im = image.load_img(filepath, target_size=image_size, color_mode="grayscale")
         image = img_to_array(im)
         image /= 255
@@ -61,47 +60,33 @@ def upload():
     # return render_template("index.html")
 
 # /api/getCountryNames?indicator_code=<indicator_code>
-@app.route('/api/getPersonalityTraits', methods=['GET'])
+@app.route('/api/getPersonalityTraits', methods=['POST'])
 def getPersonalityTraits():
-    
-#     target = os.path.join(APP_ROOT, 'images/')
-#     if not os.path.isdir(target):
-#         os.mkdir(target)
-#    for file in request.files.getlist("file"):
-#         filename = file.filename
-#         destination = "/".join([target, filename])
-#         file.save(destination)
-#         file = destination
+    target = os.path.join(APP_ROOT, 'images/')
+    if not os.path.isdir(target):
+        os.mkdir(target)
+    for file in request.files.getlist("file"):
+        filename = file.filename
+        destination = "/".join([target, filename])
+        file.save(destination)
+        file = filename
 
-    file = "/images/Michael_HW.png"
+    print("FileName is : "+filename)
+
+    # file = "Michael_HW.png"
     personality_Trait_dict = execute_model.identifyPersonalityTraits(file)
 
-    #     model = load_model("mnist_trained.h5")
-    #     image_size = (28, 28)
-        
-    #     from tensorflow.keras.preprocessing import image
-    #     from tensorflow.keras.preprocessing.image import img_to_array
+    print("Printin g value of personality_Trait_dict:")
+    print(personality_Trait_dict)
 
-    #     im = image.load_img(filepath, target_size=image_size, color_mode="grayscale")
-    #     image = img_to_array(im)
-    #     image /= 255
-    #     img = image.flatten().reshape(-1, 28*28)
-    #     img = 1 - img
-    #     model.predict_classes(img)
-
-    #     print(model.predict_classes(img))
-
-    #     pred = model.predict_classes(img)
-
-
-    personality_Trait_dict = {
-        "Emotional_Stability": "Not Stable",
-        "Mental_Power": "Low",
-        "Modesty": "Not Observed",
-        "Discipline": "Not Observed",
-        "Concentration": "Observed",
-        "Social_Isolation": "Observed"
-        }
+    # personality_Trait_dict = {
+    #     "Emotional_Stability": "Not Stable",
+    #     "Mental_Power": "Low",
+    #     "Modesty": "Not Observed",
+    #     "Discipline": "Not Observed",
+    #     "Concentration": "Observed",
+    #     "Social_Isolation": "Observed"
+    #     }
 
     return jsonify(personality_Trait_dict)
 

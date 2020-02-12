@@ -28,7 +28,7 @@
 			$.ajax({
 			//   type: "POST",
 			//   url: "/api/upload",
-			 type: "GET",
+			 type: "POST",
 			 url: "/api/getPersonalityTraits",
 			  data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
 			  contentType: false, // The content type used when sending data to the server.
