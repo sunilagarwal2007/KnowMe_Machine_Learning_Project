@@ -1,1 +1,1 @@
-web: gunicorn knowme.app:app
+web: gunicorn knowme:app
