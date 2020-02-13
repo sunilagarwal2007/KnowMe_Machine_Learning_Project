@@ -1,12 +1,16 @@
 # import necessary libraries
-import os
+import os, sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from flask import Flask, render_template,  jsonify, request
 import numpy as np
 import pandas as pd
 # from tensorflow.keras.models import load_model
 # from tensorflow.keras.preprocessing import image
-import sys
-sys.path.append("knowme")
+
+
+# import sys
+# sys.path.append("knowme")
 import Execute_Model as execute_model
 
 # Create an instance of our Flask app.
