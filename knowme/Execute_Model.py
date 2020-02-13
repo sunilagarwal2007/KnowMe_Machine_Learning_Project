@@ -1,10 +1,13 @@
 import os
+import os, sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 import itertools
 from sklearn.svm import SVC
 from joblib import dump, load
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import app.knowme.ExtractFeatures as extract
+import ExtractFeatures as extract
 import categorize
 from flask import Flask, jsonify, render_template
 
