@@ -11,7 +11,7 @@ import pandas as pd
 
 # import sys
 # sys.path.append("knowme")
-# import Execute_Model as execute_model
+import Execute_Model as execute_model
 
 # Create an instance of our Flask app.
 app = Flask(__name__)
@@ -81,7 +81,7 @@ def getPersonalityTraits():
     print("image filename to process: " +image_filename)
 
     # file = "Michael_HW.png"
-    # personality_Trait_dict = execute_model.identifyPersonalityTraits(image_filename)
+    personality_Trait_dict = execute_model.identifyPersonalityTraits(image_filename)
 
     print("Printin g value of personality_Trait_dict:")
     print(personality_Trait_dict)
