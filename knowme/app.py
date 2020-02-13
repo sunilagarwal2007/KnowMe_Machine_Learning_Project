@@ -77,7 +77,7 @@ def getPersonalityTraits():
     print("FileName is : "+filename)
 
     # image_filename = "".join(["knowme/images/",file])
-    image_filename = "".join(["knowme/images/",file])
+    image_filename = "".join(["app/knowme/images/",file])
     print("image filename to process: " +image_filename)
 
     # file = "Michael_HW.png"
@@ -86,14 +86,14 @@ def getPersonalityTraits():
     print("Printin g value of personality_Trait_dict:")
     print(personality_Trait_dict)
 
-    personality_Trait_dict = {
-        "Emotional_Stability": "Not Stable",
-        "Mental_Power": "Low",
-        "Modesty": "Not Observed",
-        "Discipline": "Not Observed",
-        "Concentration": "Observed",
-        "Social_Isolation": "Observed"
-        }
+    # personality_Trait_dict = {
+    #     "Emotional_Stability": "Not Stable",
+    #     "Mental_Power": "Low",
+    #     "Modesty": "Not Observed",
+    #     "Discipline": "Not Observed",
+    #     "Concentration": "Observed",
+    #     "Social_Isolation": "Observed"
+    #     }
 
     return jsonify(personality_Trait_dict)
 
