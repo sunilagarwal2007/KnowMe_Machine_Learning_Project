@@ -77,7 +77,7 @@ def getPersonalityTraits():
     print("FileName is : "+filename)
 
     # image_filename = "".join(["knowme/images/",file])
-    image_filename = "".join(["app/knowme/images/",file])
+    image_filename = "".join(["knowme/images/",file])
     print("image filename to process: " +image_filename)
 
     # file = "Michael_HW.png"
