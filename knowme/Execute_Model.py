@@ -4,7 +4,7 @@ from sklearn.svm import SVC
 from joblib import dump, load
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import ExtractFeatures as extract
+import app.knowme.ExtractFeatures as extract
 import categorize
 from flask import Flask, jsonify, render_template
 
