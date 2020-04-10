@@ -57,11 +57,13 @@
             }
             .jumbotron_image{
               /* background-image:url('static/images/project_image.jpg'); */
-              background:url('static/images/project_image.jpg');
-              background-repeat: no-repeat;
+              /* background:url('static/images/project_image.jpg'); */
+              background-image: url("static/images/jumbotron_bg.jpg");
+              /* background-repeat: no-repeat; */
               height: 200px;
               /* background-size: auto; */
               background-position: center;
+              background-color: #1879b5;
 
             }
 
@@ -70,7 +72,12 @@
                 background-size:inherit;
                 padding: 0.1em 0.1em;
                 background-image: url("static/images/jumbotron_bg.jpg");
+                /* background-color: #1879b5; */
                 object-fit: contain;
+            }
+            .headerImage{
+              width: 290px;
+              /* margin-left: 60px; */
             }
             </style>
 
@@ -78,10 +85,11 @@
 <body>
 <div class="row">
     <div class="col-md-4 jumbotron_image" >
+      <img class="headerImage" src="static/images/project_image.jpg" >
     </div>
-    <div class="col-md-8 jumbotron text-center" style="background-color:royalblue;height: 200px;background-position:center">
+    <div class="col-md-8 jumbotron text-center" style="height: 200px;background-position:center">
       <h1 style="color: snow">KnowME</h1>
-      <h5 style="color: snow">Learn about yourself with Machine Learning</h5>
+      <h5 style="color: snow">Know yourself through Machine Learning</h5>
     </div>
 </div>
 <div class="container-fluid">
